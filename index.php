@@ -24,10 +24,13 @@ if($_SERVER['REQUEST_METHOD']=="POST")
 {
   $data = json_decode( file_get_contents( 'php://input' ), true );
   
-  $name = $data['name'];
+
   $email = $data['email'];
+  $asunto = $data['asunto'];
+  $mensaje = $data['mensaje'];
+
   
-  $json = add_user_info($name,$email);
+  $json = add_user_info($email,$asunto,$mensaje);
   echo json_encode($json);
 }
 
@@ -36,10 +39,11 @@ if($_SERVER['REQUEST_METHOD']=="PUT")
   $data = json_decode( file_get_contents( 'php://input' ), true );
   
   $id = $data['id'];
-  $name = $data['name'];
   $email = $data['email'];
-  
-  $json = update_user_info($id,$name,$email);
+  $asunto = $data['asunto'];
+  $mensaje = $data['mensaje'];
+
+  $json = update_user_info($id,$email,$asunto,$mensaje);
   echo json_encode($json);
 }
 

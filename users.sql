@@ -1,83 +1,37 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu1
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Mayo/05/ 14, 2023 at 05:25 PM
--- Server version: 5.7.11-0ubuntu6
--- PHP Version: 7.0.4-7ubuntu2
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `users`
---
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Versión del servidor:         10.4.28-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win64
+-- HeidiSQL Versión:             12.4.0.6659
 -- --------------------------------------------------------
 
---
--- Table structure for table `user`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- Volcando estructura para tabla users.user
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `asunto` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `mensaje` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `user`
---
+-- Volcando datos para la tabla users.user: ~0 rows (aproximadamente)
+DELETE FROM `user`;
+INSERT INTO `user` (`id`, `email`, `asunto`, `mensaje`) VALUES
+	(1, 'rafa@gamil.com', 'deuda', 'usted tiene una cuenta pendiente'),
+	(2, 'jofu@asd.com', 'deuda', 'usted tiene una cuenta pendiente');
 
-INSERT INTO `user` (`id`, `name`, `email`) VALUES
-(1, 'Aggi Southworth', 'asouthworth0@princeton.edu'),
-(2, 'Thornie Diggons', 'tdiggons1@parallels.com'),
-(3, 'Ivett Westley', 'iwestley2@example.com'),
-(4, 'Libby Styant', 'lstyant3@shareasale.com'),
-(5, 'Bernete Tisun', 'btisun4@barnesandnoble.com'),
-(6, 'Carlen Ranklin', 'cranklin5@mashable.com'),
-(7, 'Ardra Nafzger', 'anafzger6@furl.net'),
-(8, 'Aubert Tennison', 'atennison7@engadget.com'),
-(9, 'Francklin Izod', 'fizod8@g.co'),
-(10, 'Carma Atger', 'catger9@newsvine.com'),
-(11, 'Dael Torn', 'dtorna@imageshack.us'),
-(12, 'Aurea Edards', 'aedardsb@flavors.me'),
-(13, 'Virgie Diggins', 'vdigginsc@forbes.com'),
-(14, 'Klarrisa Brahan', 'kbrahand@smh.com.au'),
-(15, 'Phillie Avison', 'pavisone@weibo.com'),
-(16, 'Lauralee Bowhey', 'lbowheyf@desdev.cn'),
-(17, 'Cthrine Soots', 'csootsg@liveinternet.ru'),
-(18, 'Nicol Gavagan', 'ngavaganh@meetup.com'),
-(19, 'Georgi Ellam', 'gellami@wordpress.com'),
-(20, 'Ellary Ffrench', 'effrenchj@sbwire.com');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

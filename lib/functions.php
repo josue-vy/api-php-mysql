@@ -46,10 +46,10 @@ function get_single_user_info($id)
 
 
 
-function update_user_info($id,$name,$email)
+function update_user_info($id,$email,$asunto,$mensaje)
 {
     $pdo = Database::connect();
-    $sql = "UPDATE user SET name = '{$name}', email = '{$email}' where id = '{$id}'";
+    $sql = "UPDATE user SET name = '{$email}', email = '{$email}' where id = '{$id}'";
     $status = [];
 
     try {
@@ -74,10 +74,10 @@ function update_user_info($id,$name,$email)
 }
 
 
-function add_user_info($name,$email)
+function add_user_info($email,$asunto,$mensaje)
 {
     $pdo = Database::connect();
-    $sql = "INSERT INTO user(`name`,`email`) VALUES('{$name}', '{$email}')";
+    $sql = "INSERT INTO user(`email`,`asunto`,`mensaje`) VALUES('{$email}', '{$asunto}', '{$mensaje}')";
     $status = [];
 
     try {
